@@ -4,7 +4,7 @@ order: 2
 title: Introduction
 image: /assets/images/Transformation_small.png
 summary: Introduction to alchemical free energy calculations
---
+---
 
 To understand the advantages and disadvantages of different free energy methods, it is important to begin 
 with a review of the underlying principles. This page is dedicated to the most fundamental concepts of free 
