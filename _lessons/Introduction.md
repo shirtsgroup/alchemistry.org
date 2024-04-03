@@ -44,7 +44,7 @@ can usually be set up without these assumptions, but we'll make these assumption
    - Harmonic bond angle terms
    - Periodic dihedral terms
    - Non-bonded terms made up of point charges and Lennard-Jones repulsion/dispersion terms  
- - constant temperature is maintained:  (discussed [[#Facts from the Free Energy Difference Definition | below]])
+ - constant temperature is maintained:  (see below)[fun-facts-from-the-free-energy-difference-definition]
  - **Masses do not alchemically change.* If one wishes to do this, substitute all potential energies, $U$, with the more general Hamiltonian, $\mathcal{H}$.
  - **QN and QM/MM** will **not be considered** there are number of other more complicated factors to consider that are beyond the scope of this discussion.
 
