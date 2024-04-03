@@ -1,0 +1,54 @@
+<div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for iterator in site.[include.content_type] %}
+    <article class="card-wrapper card">
+      <a href="{{ iterator.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+        {% assign card_body_col = '12' %}
+
+        {% if iterator.image %}
+          {% assign src = iterator.image.path | default: iterator.image %}
+          {% unless src contains '//' %}
+            {% assign src = iterator.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+
+          {% assign alt = iterator.image.alt | xml_escape | default: 'Preview Image' %}
+
+          {% assign lqip = null %}
+
+          {% if iterator.image.lqip %}
+            {% capture lqip %}lqip="{{ iterator.image.lqip }}"{% endcapture %}
+          {% endif %}
+
+          <div class="col-md-5">
+            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+          </div>
+
+          {% assign card_body_col = '7' %}
+        {% endif %}
+
+        <div class="col-md-{{ card_body_col }}">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ iterator.title }}</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                <!-- Check for content -->
+                {% assign summary = iterator.summary | strip_newlines %}
+                {% if summary != "" %}
+                  {% include no-linenos.html content=summary %}
+                  {{ summary | markdownify | strip_html | escape }}
+                {% else % }
+                  {% include no-linenos.html content=iterator.content %}
+                  {{ iterator.content | markdownify | strip_html | truncate: 200 | escape }}
+                {% endif %}
+              </p>
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+<!-- #iterator-list -->
+
