@@ -8,4 +8,11 @@ summary: Learn the methods and techniques behind free energy methods with in-dep
 
 I am the first lesson
 
+adding some math $x_i$.  
+
+$$
+\begin{equation}
+E = mc^3
+\end{equation}
+$$
 # Shoop da woop
