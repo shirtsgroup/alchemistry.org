@@ -1,0 +1,36 @@
+format: jb-book
+root: welcome
+parts:
+
+  - caption: Fundamentals of Free Energy
+    chapters:  # Uses the header of first file for label, otherwise can use "caption" as main directive
+      - file: fundamentals/FreeEnergyFundamentals
+        sections:  # Creates subsections under the above file in the sidebar TOC
+          - file: fundamentals/ExponentialAveraging
+          - file: fundamentals/ThermodynamicIntegration
+          - file: fundamentals/BennetAcceptanceRatio
+          - file: fundamentals/WHAM
+          - file: fundamentals/MBAR
+      - file: fundamentals/ThermodynamicCycle
+        sections:
+          - file: fundamentals/IntermediateStates
+          - file: fundamentals/RunningSimulations
+          - file: fundamentals/ExtractingSimData
+          - file: fundamentals/Analysis
+          - file: fundamentals/ImprovingSampling
+
+  - caption: Tutorials and External Resources
+    chapters:
+      - file: examples/ExamplesIntro
+      - file: external/ExternalTutorials
+
+  - caption: Events
+    chapters:
+      - file: events/UpcomingEvents
+        sections:
+          - file: events/2024WorkFEDD
+      - file: events/PastEvents
+
+  - caption: About
+    chapters:
+      - file: about
