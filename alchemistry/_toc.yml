@@ -34,3 +34,7 @@ parts:
   - caption: About
     chapters:
       - file: about
+
+  - caption: Glossary
+    chapters:
+      - file: Glossary
