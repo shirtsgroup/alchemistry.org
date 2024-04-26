@@ -35,6 +35,7 @@ parts:
     chapters:
       - file: about
 
-  - caption: Glossary
+  - caption: Reference Material
     chapters:
       - file: Glossary
+      - file: Bibliography
