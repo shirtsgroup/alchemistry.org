@@ -33,13 +33,30 @@ html:
   #google_analytics_id: G-FHKVGE8HKZ
 
 sphinx:
+  extra_extensions:
+    - sphinx_tippy  # Provides helpful little popup tips on all the URL links
   # Uses the default Sphinx Book Theme, which in turn borrows from its parent PyData Theme
   config:  # This block is parsed as YAML -> Python dict as a drop in replacement for the Sphinx conf.py file
-    html_js_files:
-    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    # In case they are ever needed to reference for tippy
+#    html_js_files:
+#    - https://unpkg.com/@popperjs/core@2
+#    - https://unpkg.com/tippy.js@6
     html_favicon: images/alchemistry-favicon.ico
     # This is the PyData theme control
     html_theme_options:
       logo:
         text: "Alchemistry.org"  # Sets the subtext under the logo using PyData Theme settings
     html_title: Alchemistry.org  # This doesn't seem to actually do anything, despite Book Theme saying it should
+    html_static_path: ['_static']
+    html_css_files: ["tippy.css"]
+    tippy_add_class: "has-tippy"
+    # This supposedly restricts which classes get the tip selector, doesn't seem to work.
+    tippy_tip_selector: "std-term"
+    # Renders math inside Tippy popups
+    tippy_enable_mathjax: True
+    # Jupyter uses MathJax v2 by default, but we can enable v3 which the MathJax folks claim is faster.
+    # Given the large amount of math, we're using it
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    # Citations
+    bibtex_reference_style: super
+    bibtex_default_style: plain

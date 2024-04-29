@@ -34,3 +34,8 @@ parts:
   - caption: About
     chapters:
       - file: about
+
+  - caption: Reference Material
+    chapters:
+      - file: Glossary
+      - file: Bibliography
